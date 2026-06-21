@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Te amo 💕</title>
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,#ffd6e8,#ffb6d5,#ff8fc7);
+    font-family:'Comic Sans MS','Segoe UI',sans-serif;overflow:hidden}
+  .card{background:#fff0f6;border-radius:30px;padding:40px 30px;text-align:center;
+    box-shadow:0 20px 50px rgba(255,105,180,.4);max-width:340px;
+    border:6px solid #ff8fc7;animation:pop .6s ease}
+  @keyframes pop{0%{transform:scale(.7);opacity:0}100%{transform:scale(1);opacity:1}}
+  .heart{width:120px;animation:beat 1.2s ease-in-out infinite}
+  @keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+  h1{color:#e0529c;font-size:2.2em;margin:15px 0 5px;text-shadow:2px 2px #ffd6e8}
+  p{color:#c2418a;font-size:1.1em;margin:0}
+  .kitty{width:140px;margin-top:10px}
+  .sparkles{position:fixed;inset:0;pointer-events:none}
+  .s{position:absolute;font-size:24px;animation:fall linear infinite;opacity:.8}
+  @keyframes fall{0%{transform:translateY(-10vh) rotate(0)}100%{transform:translateY(110vh) rotate(360deg)}}
+</style>
+</head>
+<body>
+<div class="sparkles" id="sparkles"></div>
+<div class="card">
+  <svg class="heart" viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
+    <path d="M50 85 C 10 55, -10 20, 20 8 C 38 0, 50 15, 50 25 C 50 15, 62 0, 80 8 C 110 20, 90 55, 50 85 Z" fill="#ff5ca8"/>
+    <ellipse cx="33" cy="22" rx="8" ry="5" fill="#ffb6d9" opacity=".8"/>
+  </svg>
+  <h1>Te amo</h1>
+  <p>más que a nada en este mundo 🌸</p>
+  <svg class="kitty" viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="100" cy="100" rx="70" ry="60" fill="#fff"/>
+    <ellipse cx="55" cy="60" rx="22" ry="22" fill="#fff"/>
+    <ellipse cx="145" cy="60" rx="22" ry="22" fill="#fff"/>
+    <polygon points="35,45 55,60 45,75" fill="#fff"/>
+    <polygon points="165,45 145,60 155,75" fill="#fff"/>
+    <polygon points="38,48 55,60 48,68" fill="#ffb6d9"/>
+    <polygon points="162,48 145,60 152,68" fill="#ffb6d9"/>
+    <ellipse cx="75" cy="105" rx="6" ry="8" fill="#222"/>
+    <ellipse cx="125" cy="105" rx="6" ry="8" fill="#222"/>
+    <ellipse cx="100" cy="118" rx="7" ry="5" fill="#ffd23f"/>
+    <path d="M93 118 Q90 122 85 121" stroke="#222" stroke-width="2" fill="none"/>
+    <path d="M107 118 Q110 122 115 121" stroke="#222" stroke-width="2" fill="none"/>
+    <line x1="100" y1="112" x2="40" y2="100" stroke="#222" stroke-width="1.5"/>
+    <line x1="100" y1="118" x2="38" y2="118" stroke="#222" stroke-width="1.5"/>
+    <line x1="100" y1="112" x2="160" y2="100" stroke="#222" stroke-width="1.5"/>
+    <line x1="100" y1="118" x2="162" y2="118" stroke="#222" stroke-width="1.5"/>
+    <polygon points="60,40 75,30 78,48" fill="#ff5ca8"/>
+  </svg>
+</div>
+<script>
+const c=document.getElementById('sparkles'),e=['💗','✨','🌸','💕'];
+for(let i=0;i<25;i++){
+  const s=document.createElement('div');
+  s.className='s';s.textContent=e[Math.floor(Math.random()*e.length)];
+  s.style.left=Math.random()*100+'vw';
+  s.style.animationDuration=(4+Math.random()*4)+'s';
+  s.style.animationDelay=Math.random()*5+'s';
+  c.appendChild(s);
+}
+</script>
+</body>
+</html>
